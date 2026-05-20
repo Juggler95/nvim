@@ -13,3 +13,5 @@ Make sure to backup your current config if you have one.
 - ripgrep
 - node, npm
 - Nerd Font (recommended)
+
+You can remove lua/custom/plugins/love2d.lua if you don't work on lua love projects.
