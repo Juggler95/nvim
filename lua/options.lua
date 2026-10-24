@@ -9,9 +9,9 @@ vim.o.number = true
 --  Experiment for yourself to see if you like it!
 vim.o.relativenumber = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
@@ -28,6 +28,9 @@ vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
 -- Enable break indent
 vim.o.breakindent = true
+
+-- disable swap
+vim.opt.swapfile = false
 
 -- Enable undo/redo changes even after closing and reopening a file
 vim.o.undofile = true
@@ -48,10 +51,6 @@ vim.o.timeoutlen = 300
 -- Configure how new splits should be opened
 vim.o.splitright = true
 vim.o.splitbelow = true
-
--- transprarent neovim background
-vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
