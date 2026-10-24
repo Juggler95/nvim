@@ -253,6 +253,36 @@ For a new language, the usual process is:
 - Add a standalone linter only if the LSP diagnostics are insufficient.
 - Open a source file and confirm Treesitter highlighting works.
 
+### QML and Quickshell support
+
+QML support is configured with the `qmlls` language server, Blink completion,
+the `qmljs` Treesitter parser, and Qt's `qmlformat` formatter. QML and QMLJS
+files are formatted automatically when saved.
+
+Quickshell needs a machine-specific QML language-server configuration. In the
+root of each Quickshell configuration, next to `shell.qml`, create an empty
+`.qmlls.ini` file:
+
+```sh
+touch .qmlls.ini
+```
+
+Start Quickshell once with that configuration. Quickshell will populate the
+file with the correct import paths. Add `.qmlls.ini` to that project's
+`.gitignore` because its generated contents are specific to the computer.
+
+Use these commands to diagnose QML support:
+
+```vim
+:set filetype?
+:LspInfo
+:ConformInfo
+:checkhealth vim.lsp
+```
+
+The detected filetype should be `qml` or `qmljs`, and `qmlls` should appear as
+an attached language server.
+
 ## Maintenance
 
 - `:Lazy update` updates plugins.
