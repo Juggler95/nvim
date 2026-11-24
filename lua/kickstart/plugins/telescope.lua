@@ -90,7 +90,7 @@ return {
         'n',
         '<leader>sa',
         function() builtin.find_files { hidden = true, no_ignore = true, cwd = vim.fn.getcwd() } end,
-        { desc = '[S]earch [F]iles' }
+        { desc = '[S]earch [A]ll files (hidden/ignored)' }
       )
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       vim.keymap.set({ 'n', 'v' }, '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
